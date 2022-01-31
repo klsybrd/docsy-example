@@ -3,8 +3,22 @@ title = "Goldydocs"
 
 enableRobotsTXT = true
 
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
+# set docsy as theme, either locally or as module
+[module]
+  # uncomment lines below for temporary local development of module
+  # replacements = "github.com/google/docsy -> ../../docsy"
+  # replacements = "github.com/google/docsy/module -> ../../docsy"
+  [module.hugoVersion]
+    extended = true
+    min = "0.73.0"
+  [[module.imports]]
+    # either get theme from local themes folder
+    path = "docsy"
+    # or pull it in as hugo module
+    # path = "github.com/google/docsy"
+  # uncomment import below when pulling in as hugo module
+  # [[module.imports]]
+  #  path = "github.com/google/docsy/module"
 
 # Will give values to .Lastmod etc.
 enableGitInfo = true
